@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Whiz225/Flight-Search-Engine/static/css/main.280d3dca.css",
+    "main.js": "/Whiz225/Flight-Search-Engine/static/js/main.e749486f.js",
+    "index.html": "/Whiz225/Flight-Search-Engine/index.html",
+    "main.280d3dca.css.map": "/Whiz225/Flight-Search-Engine/static/css/main.280d3dca.css.map",
+    "main.e749486f.js.map": "/Whiz225/Flight-Search-Engine/static/js/main.e749486f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.280d3dca.css",
+    "static/js/main.e749486f.js"
+  ]
+}
