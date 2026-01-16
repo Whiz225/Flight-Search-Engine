@@ -2,7 +2,7 @@
   "name": "flight-search-engine",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/Whiz225/Flight-Search-Engine",
+  "homepage": ".",
   "dependencies": {
     "autoprefixer": "^10.4.16",
     "axios": "^1.6.2",

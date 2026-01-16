@@ -299,22 +299,22 @@ const CheckoutPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-500 via-purple-600 to-secondary-600 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary-500 via-purple-600 to-secondary-600 p-2 xs:p-3 sm:p-4">
       {/* Header */}
-      <div className="bg-white rounded-2xl p-6 mb-6 shadow-2xl max-w-7xl mx-auto">
+      <div className="bg-white rounded-xl xs:rounded-2xl p-4 xs:p-6 mb-4 xs:mb-6 shadow-2xl max-w-7xl mx-auto">
         <button
-          className="flex items-center text-primary-600 font-semibold mb-4 hover:text-primary-700 transition-colors"
+          className="flex items-center text-primary-600 font-semibold mb-3 xs:mb-4 hover:text-primary-700 transition-colors text-sm xs:text-base"
           onClick={() => navigate(-1)}
         >
           <FaArrowLeft className="mr-2" /> Back to Search
         </button>
 
-        <h1 className="text-3xl font-bold text-gray-800 mb-6">
+        <h1 className="text-xl xs:text-2xl sm:text-3xl font-bold text-gray-800 mb-4 xs:mb-6">
           Complete Your Booking
         </h1>
 
         {/* Steps */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-2">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 xs:gap-6 mb-2">
           <div
             className={`flex items-center ${
               step >= 1 ? "text-primary-600" : "text-gray-400"
@@ -402,10 +402,10 @@ const CheckoutPage = () => {
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 xs:gap-6">
         {/* Main Form */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-2xl p-6 shadow-2xl">
+          <div className="bg-white rounded-xl xs:rounded-2xl p-4 xs:p-6 shadow-2xl">
             <form onSubmit={handleSubmit} noValidate>
               {/* Step 1: Passenger Details */}
               {step === 1 && (
@@ -1079,8 +1079,8 @@ const CheckoutPage = () => {
 
         {/* Sidebar Summary */}
         <div className="lg:col-span-1">
-          <div className="sticky top-6">
-            <div className="bg-white rounded-2xl p-6 shadow-2xl">
+          <div className="sticky top-4 xs:top-6">
+            <div className="bg-white rounded-xl xs:rounded-2xl p-4 xs:p-6 shadow-2xl">
               {/* Header */}
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">

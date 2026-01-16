@@ -82,23 +82,28 @@ function App() {
           </p>
         </header>
 
-        <main className="max-w-7xl mx-auto px-4 pb-12">
+        {/* <main className="max-w-7xl mx-auto px-4 pb-12"> */}
+        <main className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-4 md:px-6 pb-8 xs:pb-12">
           <Routes>
             <Route
               path="/"
               element={
                 <>
                   {/* Search Section */}
-                  <div className="mb-8">
+                  {/* <div className="mb-8"> */}
+                  <div className="mb-6 xs:mb-8">
                     <FlightSearch
                       onSearch={handleSearch}
                       initialParams={searchParams}
                     />
                   </div>
 
-                  <div className="flex flex-col lg:flex-row gap-6">
-                    {/* Filters Sidebar */}
-                    <div className="lg:w-1/4">
+                  {/* <div className="flex flex-col lg:flex-row gap-6"> */}
+                  {/* Filters Sidebar */}
+                  {/* <div className="lg:w-1/4"> */}
+                  <div className="flex flex-col lg:flex-row gap-4 xs:gap-6">
+                    {/* Filters Sidebar - Hidden on small screens, shown with button */}
+                    <div className="lg:w-1/4 hidden lg:block">
                       <div className="sticky top-6">
                         <Filters
                           filters={filters}
@@ -111,27 +116,57 @@ function App() {
                     {/* Main Content */}
                     <div className="lg:w-3/4">
                       {/* Price Graph */}
-                      <div className="mb-6">
+                      {/* <div className="mb-6"> */}
+                      <div className="mb-4 xs:mb-6">
                         <PriceGraph priceData={priceData} filters={filters} />
+                      </div>
+
+                      {/* Mobile Filter Toggle Button */}
+                      <div className="lg:hidden mb-4">
+                        <button
+                          onClick={() => {
+                            // You could implement a mobile filter drawer here
+                            const mobileFilter =
+                              document.getElementById("mobile-filters");
+                            if (mobileFilter) {
+                              mobileFilter.classList.toggle("hidden");
+                            }
+                          }}
+                          className="btn-secondary w-full flex items-center justify-center"
+                        >
+                          <span>Filter Flights ({flights.length} results)</span>
+                        </button>
+                      </div>
+
+                      {/* Mobile Filters (Hidden by default) */}
+                      <div
+                        id="mobile-filters"
+                        className="lg:hidden hidden mb-6"
+                      >
+                        <Filters
+                          filters={filters}
+                          onFilterChange={handleFilterChange}
+                          flights={flights}
+                        />
                       </div>
 
                       {/* Flight Results */}
                       <div>
                         {loading && (
-                          <div className="card text-center py-12">
+                          <div className="card text-center py-8 xs:py-12">
                             <div className="animate-pulse">
-                              <div className="h-8 bg-gray-300 rounded w-48 mx-auto mb-4"></div>
-                              <div className="h-4 bg-gray-200 rounded w-64 mx-auto"></div>
+                              <div className="h-6 xs:h-8 bg-gray-300 rounded w-32 xs:w-48 mx-auto mb-3 xs:mb-4"></div>
+                              <div className="h-3 xs:h-4 bg-gray-200 rounded w-48 xs:w-64 mx-auto"></div>
                             </div>
                           </div>
                         )}
 
                         {error && (
-                          <div className="card bg-red-50 border border-red-200 p-6">
-                            <div className="text-red-700 font-medium">
+                          <div className="card bg-red-50 border border-red-200 p-4 xs:p-6">
+                            <div className="text-red-700 font-medium text-sm xs:text-base">
                               Error: {error}
                             </div>
-                            <p className="text-red-600 text-sm mt-2">
+                            <p className="text-red-600 text-xs xs:text-sm mt-2">
                               Please try again or check your connection.
                             </p>
                           </div>
