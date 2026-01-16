@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FlightSearch from "./components/FlightSearch";
 import FlightResults from "./components/FlightResults";
 import PriceGraph from "./components/PriceGraph";
@@ -189,25 +190,29 @@ function App() {
             </p>
             <div className="flex justify-center gap-6 mt-4">
               <button
-                onClick={() => (window.location.href = "/privacy-policy")}
+                onClick={() => (window.location.hash = "/privacy-policy")}
+                // onClick={() => (window.location.href = "/privacy-policy")}
                 className="text-white/60 hover:text-white transition-colors"
               >
                 Privacy Policy
               </button>
               <button
-                onClick={() => (window.location.href = "/terms-of-service")}
+                onClick={() => (window.location.hash = "/terms-of-service")}
+                // onClick={() => (window.location.href = "/terms-of-service")}
                 className="text-white/60 hover:text-white transition-colors"
               >
                 Terms of Service
               </button>
               <button
-                onClick={() => (window.location.href = "/contact-us")}
+                onClick={() => (window.location.hash = "/contact-us")}
+                // onClick={() => (window.location.href = "/contact-us")}
                 className="text-white/60 hover:text-white transition-colors"
               >
                 Contact Us
               </button>
               <button
-                onClick={() => (window.location.href = "/help-center")}
+                onClick={() => (window.location.hash = "/help-center")}
+                // onClick={() => (window.location.href = "/help-center")}
                 className="text-white/60 hover:text-white transition-colors"
               >
                 Help Center
